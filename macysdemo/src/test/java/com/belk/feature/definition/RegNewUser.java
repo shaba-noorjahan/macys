@@ -1,18 +1,11 @@
 package com.belk.feature.definition;
 
-import org.testng.annotations.Test;
-import org.testng.annotations.Test;
-import org.testng.annotations.Test;
-import java.util.List;
-import java.util.Map;
 import java.util.logging.Logger;
 
 import com.belk.bean.Customer;
 import com.macys.macysdemo.Common;
 
-import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 
 public class RegNewUser {
@@ -22,7 +15,7 @@ public class RegNewUser {
 //			Common.BrowserLaunch("https://www.belk.com/p/ronni-nicole-womens-sleeveless-tiered-stripe-babydoll-dress/1500172V217302.html?dwvar_1500172V217302_color=121370507141#q_redirect=womens+dress&start=2");
 //		    
 //	}
-
+ 
 	@When("I click on the my account")
 	public void step2() {
 		Common.BrowserLaunch("https://www.belk.com/create-account-registry");
