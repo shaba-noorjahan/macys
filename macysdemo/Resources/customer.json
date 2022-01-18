@@ -1,0 +1,38 @@
+[	
+	{
+		"firstName": "shasad",
+		"lastName": "ali",
+		"age": 25,
+		"emailAddress": "ali@gmail.com",
+		"address": {
+			"streetAddress": "5 cedar glenn ct",
+			"city": "cumming",
+			"postCode": "30040",
+			"state": "GA",
+			"country": "US",
+			"county": "forsyth"
+		},
+		"phoneNumber": {
+			"home": "12234452316",
+			"mob": "12234452317"
+		}
+	},
+	{
+		"firstName": "sadsha",
+		"lastName": "ali",
+		"age": 35,
+		"emailAddress": "sha@gmail.com",
+		"address": {
+			"streetAddress": "6 cedar glenn ct",
+			"city": "alpharetta",
+			"postCode": "30004",
+			"state": "GA",
+			"country": "US",
+			"county": "fulton"
+		},
+		"phoneNumber": {
+			"home": "+12234452312",
+			"mob": "+145067879908"
+		}
+	}
+]
