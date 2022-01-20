@@ -18,15 +18,21 @@ public class RegNewUser {
  
 	@When("I click on the my account")
 	public void step2() {
-		Common.BrowserLaunch("https://www.belk.com/create-account-registry");
+		Common.ReadProperty();
+		Common.BrowserLaunch(Common.p.getProperty("myaccount_url"));
+		//Common.BrowserLaunch("https://www.belk.com/create-account-registry");
 
 	}
 
 	@And("enter the details of the user {int}")
 	public void step3(int index) {
 
-		Customer customer = Common.readjson("Resources/customer.json", index);
-		if (null != customer) {
+		Common.readjson("Resources/customer.json");
+		Customer customer = Common.getCustomer(index);
+		try {
+			System.out.println(":::::: "+customer.getAge());
+			System.out.println(":::::: "+customer.getFirstName());
+			//System.out.println(":::::: "+customer.getAge());
 			Common.locatorId("dwfrm_profile_customer_firstname").sendKeys(customer.getFirstName());
 
 			Common.locatorId("dwfrm_profile_customer_lastname").sendKeys(customer.getLastName());
@@ -38,9 +44,9 @@ public class RegNewUser {
 			Common.locatorId("reg-pwd-inp").sendKeys("mystiquex");
 
 			// Common.locatorId("dwfrm_profile_login_passwordconfirm_d0ehnlxwlklp").sendKeys("mystiquex");
-		} else {
+		} catch (Exception e){
 
-			log.info("Customer not found");
+			log.info("Exception occured while writing data");
 		}
 	}
 

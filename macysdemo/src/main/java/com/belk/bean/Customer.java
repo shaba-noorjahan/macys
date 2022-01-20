@@ -23,16 +23,13 @@ public class Customer {
 		this.lastName = lastName;
 	}
 
-	int age;
+	String age;
 	
-	
-	
-
-	public int getAge() {
+	public String getAge() {
 		return age;
 	}
 
-	public void setAge(int age) {
+	public void setAge(String age) {
 		this.age = age;
 	}
 
