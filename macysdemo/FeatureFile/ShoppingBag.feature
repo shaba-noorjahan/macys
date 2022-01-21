@@ -8,6 +8,6 @@ Feature: Adding a product to cart
      When  I select the size/color/quantity 2
      And   I click the add to Bag button
      Then  the product is added to my shopping Bag
-    
+    And I check the price
     
   
