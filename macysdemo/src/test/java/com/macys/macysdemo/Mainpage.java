@@ -1,6 +1,6 @@
 package com.macys.macysdemo;
 
-import java.util.logging.Logger;
+import org.apache.log4j.Logger;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -19,6 +19,7 @@ public class Mainpage {
 		try {
 			Common.locatorXpath("//*[@id=\"bx-close-inside-1418784\"]").click();
 		} catch (Exception e) {
+			log.error("Exception occured while launching browser");
 
 		}
 
@@ -44,6 +45,7 @@ public class Mainpage {
 		try {
 			Common.locatorXpath("//*[@id=\"add-to-cart\"]").click();
 		} catch (Exception e) {
+			log.error("Exception occured while selecting size");
 
 		}
 		Common.wait(5);

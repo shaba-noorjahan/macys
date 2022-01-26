@@ -1,6 +1,7 @@
 package com.belk.feature.definition;
 
-import java.util.logging.Logger;
+import org.apache.log4j.Logger;
+import org.openqa.selenium.WebElement;
 
 import com.belk.bean.Customer;
 import com.macys.macysdemo.Common;
@@ -10,17 +11,13 @@ import io.cucumber.java.en.When;
 
 public class RegNewUser {
 	static Logger log = Logger.getLogger(RegNewUser.class.getName());
-//	@Given("I am on home page")
-//		public void step1() {
-//			Common.BrowserLaunch("https://www.belk.com/p/ronni-nicole-womens-sleeveless-tiered-stripe-babydoll-dress/1500172V217302.html?dwvar_1500172V217302_color=121370507141#q_redirect=womens+dress&start=2");
-//		    
-//	}
- 
+
 	@When("I click on the my account")
 	public void step2() {
 		Common.ReadProperty();
 		Common.BrowserLaunch(Common.p.getProperty("myaccount_url"));
-		//Common.BrowserLaunch("https://www.belk.com/create-account-registry");
+		// Common.BrowserLaunch("https://www.belk.com/create-account-registry");
+		// log.logp(Level., sourceClass, sourceMethod, msg);
 
 	}
 
@@ -30,9 +27,7 @@ public class RegNewUser {
 		Common.readjson("Resources/customer.json");
 		Customer customer = Common.getCustomer(index);
 		try {
-			System.out.println(":::::: "+customer.getAge());
-			System.out.println(":::::: "+customer.getFirstName());
-			//System.out.println(":::::: "+customer.getAge());
+
 			Common.locatorId("dwfrm_profile_customer_firstname").sendKeys(customer.getFirstName());
 
 			Common.locatorId("dwfrm_profile_customer_lastname").sendKeys(customer.getLastName());
@@ -43,10 +38,9 @@ public class RegNewUser {
 
 			Common.locatorId("reg-pwd-inp").sendKeys("mystiquex");
 
-			// Common.locatorId("dwfrm_profile_login_passwordconfirm_d0ehnlxwlklp").sendKeys("mystiquex");
-		} catch (Exception e){
+		} catch (Exception e) {
 
-			log.info("Exception occured while writing data");
+			log.error("Exception occured while writing data");
 		}
 	}
 

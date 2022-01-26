@@ -1,6 +1,6 @@
 package com.belk.feature.definition;
 
-import java.util.logging.Logger;
+import org.apache.log4j.Logger;
 
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
@@ -20,7 +20,8 @@ public class ShoppingBagDef {
 	@Given("I am on PDP")
 	public void step1() {
 		Common.ReadProperty();
-		Common.BrowserLaunch(Common.p.getProperty("pdp_url"));
+		Common.BrowserLaunch(Common.p.getProperty(
+				"                                                                                                                                                   "));
 		// Common.BrowserLaunch("https://www.belk.com/p/ronni-nicole-womens-sleeveless-tiered-stripe-babydoll-dress/1500172V217302.html?dwvar_1500172V217302_color=121370507141#q_redirect=womens+dress&start=2");
 
 	}
@@ -36,11 +37,11 @@ public class ShoppingBagDef {
 				s.selectByIndex(index);
 				webElement.sendKeys(Keys.RETURN);
 			} else {
-				log.info("Given index is not valid");
+				log.error("Given index is not valid");
 			}
 			Common.wait(5);
 		} else {
-			log.info("size not found");
+			log.error("size not found");
 		}
 	}
 
@@ -49,7 +50,7 @@ public class ShoppingBagDef {
 		try {
 			Common.locatorXpath("//*[@id=\"add-to-cart\"]").click();
 		} catch (Exception e) {
-			log.info("Exception occured while adding to bag");
+			log.error("Exception occured while adding to bag");
 		}
 		Common.wait(5);
 	}
@@ -61,16 +62,16 @@ public class ShoppingBagDef {
 					.sendKeys(Keys.RETURN);
 			Common.wait(5);
 		} catch (Exception e) {
-			log.info("Exception occured while adding to cart");
+			log.error("Exception occured while adding to cart");
 		}
 
 	}
-	@And ("I check the price")
+
+	@And("I check the price")
 	public void step8() {
-	String price=Common.locatorXpath("//*[@id=\"primary\"]/div[3]/div[1]/div/table/tbody/tr[2]/td[2]").getText();
+		String price = Common.locatorXpath("//*[@id=\"primary\"]/div[3]/div[1]/div/table/tbody/tr[2]/td[2]").getText();
 		Assert.assertEquals("$20.40", price);
-			
-		
+
 	}
 
 }

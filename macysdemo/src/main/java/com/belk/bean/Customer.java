@@ -1,6 +1,8 @@
 package com.belk.bean;
 
-public class Customer {
+import java.io.Serializable;
+
+public class Customer implements Serializable {
 
 	String firstName;
 
@@ -11,10 +13,9 @@ public class Customer {
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
 	}
-	
+
 	String lastName;
-	
-	
+
 	public String getLastName() {
 		return lastName;
 	}
@@ -24,7 +25,7 @@ public class Customer {
 	}
 
 	String age;
-	
+
 	public String getAge() {
 		return age;
 	}
@@ -50,9 +51,9 @@ public class Customer {
 	public void setEmailAddress(String emailAddress) {
 		this.emailAddress = emailAddress;
 	}
-	
+
 	Address address;
-	
+
 	public Address getAddress() {
 		return address;
 	}
@@ -61,10 +62,6 @@ public class Customer {
 		this.address = address;
 	}
 
-	
 	PhoneNumber phoneNumber;
 
-	
-	
-	
 }

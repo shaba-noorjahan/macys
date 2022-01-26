@@ -1,6 +1,8 @@
 package com.belk.bean;
 
-public class PhoneNumber {
+import java.io.Serializable;
+
+public class PhoneNumber  implements Serializable  {
 	
 	String home;
 
