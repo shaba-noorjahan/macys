@@ -2,7 +2,7 @@ package com.belk.bean;
 
 import java.io.Serializable;
 
-public class PhoneNumber  implements Serializable  {
+public class PhoneNumber implements Serializable  {
 	
 	String home;
 

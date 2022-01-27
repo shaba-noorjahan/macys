@@ -20,8 +20,7 @@ public class ShoppingBagDef {
 	@Given("I am on PDP")
 	public void step1() {
 		Common.ReadProperty();
-		Common.BrowserLaunch(Common.p.getProperty(
-				"                                                                                                                                                   "));
+		Common.BrowserLaunch(Common.p.getProperty("pdp_url"));
 		// Common.BrowserLaunch("https://www.belk.com/p/ronni-nicole-womens-sleeveless-tiered-stripe-babydoll-dress/1500172V217302.html?dwvar_1500172V217302_color=121370507141#q_redirect=womens+dress&start=2");
 
 	}
